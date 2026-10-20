@@ -3,6 +3,7 @@ import { randomBytes, randomInt } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { userInfo } from 'node:os';
 import { join } from 'node:path';
+import { releaseVersion } from '../../package.json';
 import { resolveLang, strings, type Strings } from '../shared/i18n';
 import { SETTINGS_CH, type About, type AppStatus, type PanelAction, type PanelState } from '../shared/ipc';
 import { announcedEmoteHashes, customHash, customStillUrl, isCustomRef } from '../shared/emotes';
@@ -478,7 +479,7 @@ function start(): void {
     settingsWindow()?.webContents.send(SETTINGS_CH.statusChanged, status());
   }
   const about = (): About => ({
-    version: app.getVersion(),
+    version: IS_MAC || IS_LINUX ? app.getVersion() : releaseVersion,
     problems: [
       ...store.problems,
       ...(store.emoteKeyClashed ? [text().problemEmoteKeyClash] : []),

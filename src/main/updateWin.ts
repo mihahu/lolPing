@@ -10,7 +10,7 @@ export const CHECK_TIMEOUT_MS = 30_000;
  */
 export const INSTALL_TOAST_MS = 1500;
 
-const RELEASE_PAGE = 'https://github.com/darrenprx/lolPing/releases/tag/v';
+const RELEASE_PAGE = 'https://github.com/mihahu/lolPing/releases/latest';
 
 export interface WinBackendDeps {
   /** LOLPING_UPDATE_TEST_URL: a folder that serves latest.yml, used instead of GitHub. */
@@ -72,7 +72,7 @@ export class WinBackend implements UpdateBackend {
     if (!result?.isUpdateAvailable) return null; // electron-updater's own version comparison decides
     const version: unknown = result.updateInfo?.version;
     if (typeof version !== 'string' || version === '') throw new Error('GitHub sent an unexpected answer');
-    return { version, notesUrl: `${RELEASE_PAGE}${encodeURIComponent(version)}` };
+    return { version, notesUrl: RELEASE_PAGE };
   }
 
   async download(_info: UpdateInfo, onProgress: (percent: number) => void, signal: AbortSignal): Promise<void> {

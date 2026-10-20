@@ -4,6 +4,19 @@
   <a href="README.md">English</a> | 简体中文
 </p>
 
+## 个人 Windows 版本 0.5.3.1
+
+本分支的 Windows 安装包发布在 [mihahu/lolPing](https://github.com/mihahu/lolPing/releases/tag/v0.5.3.1)。
+支持通过局域网同步 GIF 和动态 WebP 原图，单张不超过 5 MiB，宽高均不超过 1024 像素。
+双方都需要使用此版本。原图缓存完成前显示静态图，后续发送时播放动画。
+仅通过互联网连接的房间和旧版客户端接收静态图。
+Windows 更新检查读取本仓库在 GitHub 上的 `latest.yml`，更新说明打开本仓库最新发布页。
+安装包、Windows 文件版本和“关于”页显示 `0.5.3.1`；内部使用 `0.5.3+1`，以兼容 electron-updater 的 SemVer 要求。
+SemVer 比较版本时忽略构建元数据，因此后续自动更新需要提高主版本号、次版本号或补丁号。
+在 Windows 上运行 `npm ci` 和 `npm run dist`，输出目录为 `release/0.5.3.1/`。
+此个人版手动构建和上传，不使用上游的发布工作流。
+保留原作者署名和 MIT 许可证。本次不提供 macOS 或 Linux 安装包。
+
 <p align="center">
   把英雄联盟的信号和表情搬到整个桌面，支持 Windows、macOS，以及实验性的 Linux X11 版本。<br>
   按住 <b>Alt</b>（Mac 上是 <b>⌥ Option</b>）拖动，在想要的信号上松开：动画弹出、音效响起，任何程序之上、任何显示器上都可以。<br>
@@ -11,7 +24,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/darrenprx/lolPing/releases/latest"><b>下载 Windows 版</b></a> ·
+  <a href="https://github.com/mihahu/lolPing/releases/latest"><b>下载 Windows 版</b></a> ·
   <a href="https://github.com/darrenprx/lolPing/releases/latest"><b>下载 Mac 版</b></a>（Apple 芯片，实验性）
 </p>
 
@@ -29,7 +42,7 @@
 
 ### Windows
 
-1. 从[最新版本](https://github.com/darrenprx/lolPing/releases/latest)下载 `lolPing-Setup-<版本号>.exe`。
+1. 从[最新版本](https://github.com/mihahu/lolPing/releases/latest)下载 `lolPing-Setup-<版本号>.exe`。
 2. 运行安装程序。安装程序没有代码签名，Windows SmartScreen 可能会提示“Windows 已保护你的电脑”：点击**更多信息**，再点**仍要运行**。
 3. lolPing 会打开设置窗口并常驻系统托盘。按住 Alt 在任意位置拖动即可发信号。
 

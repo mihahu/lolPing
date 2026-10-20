@@ -4,6 +4,19 @@
   English | <a href="README.zh-CN.md">简体中文</a>
 </p>
 
+## Personal Windows release 0.5.3.1
+
+This fork publishes its Windows installer at [mihahu/lolPing](https://github.com/mihahu/lolPing/releases/tag/v0.5.3.1).
+It includes LAN synchronization of GIF and animated WebP originals up to 5 MiB and 1024 px per side.
+Both peers need this build. The static image is shown until the original is cached; a later send plays the animation.
+Internet-only rooms and older peers receive the static image.
+Windows update checks use this fork's `latest.yml` on GitHub, and release notes open this fork's latest release.
+The installer, Windows file version and About page say `0.5.3.1`; the internal SemVer is `0.5.3+1` for electron-updater.
+SemVer ignores build metadata when comparing versions, so a later automatic update needs a higher major, minor or patch number.
+Build on Windows with `npm ci` and `npm run dist`; the output is `release/0.5.3.1/`.
+This personal release is built and uploaded manually; the upstream release workflow is not used.
+Upstream attribution and the MIT license are retained. This release contains no macOS or Linux installer.
+
 <p align="center">
   League of Legends pings and emotes for your whole desktop, on Windows and macOS.<br>
   Hold <b>Alt</b> (<b>⌥ Option</b> on a Mac), drag, and let go on a ping. The animation pops and the sound plays on top of any app, on any monitor.<br>
@@ -11,7 +24,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/darrenprx/lolPing/releases/latest"><b>Download for Windows</b></a> ·
+  <a href="https://github.com/mihahu/lolPing/releases/latest"><b>Download for Windows</b></a> ·
   <a href="https://github.com/darrenprx/lolPing/releases/latest"><b>Download for Mac</b></a> (Apple Silicon, experimental)
 </p>
 
@@ -35,7 +48,7 @@ See [Linux build, installation and testing instructions](docs/linux.md) for pack
 
 ### Windows
 
-1. Download `lolPing-Setup-<version>.exe` from the [latest release](https://github.com/darrenprx/lolPing/releases/latest).
+1. Download `lolPing-Setup-<version>.exe` from the [latest release](https://github.com/mihahu/lolPing/releases/latest).
 2. Run it. The installer isn't code-signed, so Windows SmartScreen may say "Windows protected your PC". Select **More info**, then **Run anyway**.
 3. lolPing opens its settings and moves to the tray. Hold Alt and drag anywhere to ping.
 

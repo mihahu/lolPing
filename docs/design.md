@@ -189,6 +189,7 @@ All coordinates are **physical screen pixels**.
 - **Coordinates:** `screen.screenToDipPoint({x,y})` converts physical pixels to DIP, then the display's DIP origin is subtracted to get overlay-local CSS pixels. Wheel moves are converted relative to the *wheel's* display, even when the cursor crosses onto another monitor.
 - **Toggle feedback:** tray icon state (normal or dimmed), the tray menu checkbox, and a small Fluent toast saying "Pings on" or "Pings off".
 - **Startup:** "Launch at Windows startup" uses `app.setLoginItemSettings` with the argument `--hidden`. A manual launch opens the settings window; a `--hidden` launch stays in the tray.
+- **Personal Windows distribution:** release `0.5.3.1` uses internal SemVer `0.5.3+1`, Windows build number `1`, and the package's `releaseVersion` in About. Its generic update feed reads `mihahu/lolPing/releases/latest/download/latest.yml` on GitHub; update notes open that fork's latest release. This avoids replacing the LAN animation build with an upstream installer. Future automatic updates must increase a SemVer major, minor or patch number, since build metadata does not affect ordering. No new host is added. The existing macOS update backend is unchanged; this release ships Windows only.
 
 ## 7. Overlay renderer
 

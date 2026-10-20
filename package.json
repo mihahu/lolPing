@@ -1,7 +1,8 @@
 {
   "name": "lolping",
   "productName": "lolPing",
-  "version": "0.5.3",
+  "version": "0.5.3+1",
+  "releaseVersion": "0.5.3.1",
   "private": true,
   "description": "League of Legends style ping wheel for your Windows, macOS and Linux desktop",
   "author": "Danrui Meng (https://github.com/darrenprx)",
@@ -50,7 +51,9 @@
   "build": {
     "appId": "com.lolping.app",
     "productName": "lolPing",
-    "directories": { "output": "release", "buildResources": "build" },
+    "buildNumber": "1",
+    "buildVersion": "0.5.3.1",
+    "directories": { "output": "release/0.5.3.1", "buildResources": "build" },
     "files": ["out/**/*", "package.json"],
     "win": {
       "target": [{ "target": "nsis", "arch": ["x64"] }],
@@ -61,7 +64,7 @@
       "oneClick": false,
       "perMachine": false,
       "allowToChangeInstallationDirectory": true,
-      "artifactName": "lolPing-Setup-${version}.exe",
+      "artifactName": "lolPing-Setup-0.5.3.1.exe",
       "include": "build/installer.nsh"
     },
     "mac": {
@@ -82,7 +85,7 @@
       }
     },
     "dmg": { "artifactName": "lolPing-${version}-arm64.dmg" },
-    "publish": [{ "provider": "github", "owner": "darrenprx", "repo": "lolPing" }],
+    "publish": [{ "provider": "generic", "url": "https://github.com/mihahu/lolPing/releases/latest/download/", "channel": "latest" }],
     "linux": {
       "target": [{ "target": "AppImage", "arch": ["x64"] }, { "target": "deb", "arch": ["x64"] }],
       "icon": "build/icon.png",
