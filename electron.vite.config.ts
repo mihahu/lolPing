@@ -16,7 +16,7 @@ export default defineConfig({
   preload: {
     build: {
       rollupOptions: {
-        input: { overlay: resolve('src/preload/overlay.ts'), settings: resolve('src/preload/settings.ts'), text: resolve('src/preload/text.ts'), panel: resolve('src/preload/panel.ts'), teammate: resolve('src/preload/teammate.ts') },
+        input: { overlay: resolve('src/preload/overlay.ts'), settings: resolve('src/preload/settings.ts'), text: resolve('src/preload/text.ts'), panel: resolve('src/preload/panel.ts'), teammate: resolve('src/preload/teammate.ts'), media: resolve('src/preload/media.ts') },
         output: { format: 'cjs', entryFileNames: '[name].js' },
       },
     },
@@ -33,6 +33,7 @@ export default defineConfig({
           text: resolve('src/renderer/text/index.html'),
           panel: resolve('src/renderer/panel/index.html'),
           teammate: resolve('src/renderer/teammate/index.html'),
+          media: resolve('src/renderer/media/index.html'),
         },
       },
     },
